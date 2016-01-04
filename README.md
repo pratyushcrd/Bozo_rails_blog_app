@@ -24,7 +24,7 @@ Bozo uses a number of open source projects to work properly:
 * [rails] - back end framework based on ruby
 * [act_as_votable] - for keeping count of likes
 
-And of course Bozo itself is open source with a [public repository][dill]
+And of course Bozo itself is open source with a [public repository][bozo]
  on GitHub.
 
 ### Installation
@@ -65,7 +65,7 @@ License
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-   [dill]: <https://github.com/joemccann/dillinger>
+   [bozo]: <https://github.com/pratyushcrd/Bozo_rails_blog_app>
    [git-repo-url]: <https://github.com/joemccann/dillinger.git>
    [john gruber]: <http://daringfireball.net>
    [@thomasfuchs]: <http://twitter.com/thomasfuchs>
