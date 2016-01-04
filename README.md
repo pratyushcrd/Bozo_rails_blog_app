@@ -13,8 +13,6 @@ Bozo is a simple Ruby on Rails based Web Blog application. Some of the features 
   - Edit / Delete Your Own Post
 
 
-### Version
-3.2.7
 
 ### Tech
 
