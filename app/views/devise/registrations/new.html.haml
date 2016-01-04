@@ -1,0 +1,28 @@
+.row
+  .medium-4.medium-offset-4.small-8.small-offset-2
+    %h2.subheader Sign up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .medium-4.medium-offset-4.small-8.small-offset-2
+      .field
+        %br/
+        = f.text_field :firstname, autofocus: true , placeholder: "Firstname"
+    .medium-4.medium-offset-4.small-8.small-offset-2
+      .field
+        = f.text_field :lastname, autofocus: true , placeholder: "Lastname"
+    .medium-4.medium-offset-4.small-8.small-offset-2
+      .field
+        = f.text_field :phone, autofocus: true , placeholder: "8017XXXXXX"
+    .medium-4.medium-offset-4.small-8.small-offset-2
+      .field
+        = f.email_field :email, autofocus: true , placeholder: "someone@gmail.com"
+    .medium-4.medium-offset-4.small-8.small-offset-2
+      .field
+        = f.password_field :password, autocomplete: "off" , placeholder: "Password (Minimum 8 characters)"
+    .medium-4.medium-offset-4.small-8.small-offset-2
+      .field
+        = f.password_field :password_confirmation, autocomplete: "off" , placeholder: "Confirm password"
+      .actions
+        = f.submit "Sign up", class: "button"
+    .medium-4.medium-offset-4.small-8.small-offset-2
+      = render "devise/shared/links"

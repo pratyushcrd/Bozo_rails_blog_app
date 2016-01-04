@@ -1,0 +1,20 @@
+.row
+  .medium-4.medium-offset-4.small-8.small-offset-2 
+    %h2.subheader Log in
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .medium-4.medium-offset-4.small-8.small-offset-2
+      .field
+        = f.email_field :email, autofocus: true , placeholder: "someone@gmail.com"
+    .medium-4.medium-offset-4.small-8.small-offset-2
+      .field
+        = f.password_field :password, autocomplete: "off" , placeholder: "Password (Minimum 8 characters)"
+    .medium-4.medium-offset-4.small-8.small-offset-2    
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+    .medium-4.medium-offset-4.small-4.small-offset-4       
+      .actions
+        = f.submit "Log in", class: "button"
+    .medium-4.medium-offset-4.small-8.small-offset-2 
+      = render "devise/shared/links"

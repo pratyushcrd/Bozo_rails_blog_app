@@ -1,0 +1,24 @@
+.row
+  = form_for @forum do |f|
+    - if @forum.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@forum.errors.count, "error")} prohibited this forum from being saved:"
+        %ul
+          - @forum.errors.full_messages.each do |msg|
+            %li= msg
+    .field.medium-4.medium-offset-4.small-8.small-offset-2
+      %h3{style: "color: #666"}= @form_title
+    .field.medium-4.medium-offset-4.small-8.small-offset-2
+      = f.label :title
+      = f.text_field :title
+    .field.medium-4.medium-offset-4.small-8.small-offset-2
+      = f.label :post
+      = f.text_field :post
+    .field.medium-4.medium-offset-4.small-8.small-offset-2
+      = f.label :category
+    %select.medium-4.medium-offset-4.small-8.small-offset-2{name: "forum[category]"}
+      -Category.all.each do |c|
+        %option{:value => "#{c.id}"}= c.name
+    .actions.medium-4.medium-offset-4.small-8.small-offset-2.center
+      = f.submit 'Save', class: "button center"
+      = link_to 'Back', forums_path, class: "button secondary"
