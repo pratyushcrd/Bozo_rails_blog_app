@@ -55,13 +55,6 @@ Pull the source, make changes and do a push request.
  - User Profiles
  - Better design
  - More Features (thinking) :)
- 
-### Screenshots
-![Screenshot](https://raw.githubusercontent.com/pratyushcrd/Bozo_rails_blog_app/master/screenshot/1.jpg)
-
-![Screenshot](https://raw.githubusercontent.com/pratyushcrd/Bozo_rails_blog_app/master/screenshot/3.jpg)
-
-![Screenshot](https://raw.githubusercontent.com/pratyushcrd/Bozo_rails_blog_app/master/screenshot/2.jpg)
 
 License
 ----

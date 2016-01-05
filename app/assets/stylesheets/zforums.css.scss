@@ -36,13 +36,15 @@ body{
 	background: transparent;
 }
 .blog-post h3 small{
-	color: #bbb;
+	color: #888;
 }
 .blog-post h3{
-	color: #92B06A;
+	color: #71983e;
 }
 .blog-post p{
-	color: #444;
+	color: #222;
+	line-height: 19px;
+	font-size: 14px;
 }
 .blog-post .callout{
     border-radius: 20px;
@@ -71,4 +73,19 @@ body{
 }
 .poster h2{
 	color: #eee;
+}
+
+.comment-box{
+	border: none;
+	border-radius: 25px;
+	background: #f1f1f1;
+	padding: 25px;
+}
+
+.comment-box h6{
+	color: #555;
+}
+
+.comment-box p{
+	color: #728d4e;
 }

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'acts_as_commentable'
+
 gem 'acts_as_votable', '~> 0.10.0'
 gem "haml-rails", "~> 0.9"
 gem 'devise'

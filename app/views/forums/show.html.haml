@@ -1,30 +1,37 @@
 %p#notice= notice
 
 .row.medium-8.large-7.columns
-  .blog-post
-    %h3
-      = @forum.title
-      %small= @forum.created_at
-    %p= @forum.post
-    .callout
-      %ul.menu
-        %li
-          = @forum.user.firstname + " " + @forum.user.lastname + " (" + @forum.category.name + ")"
-        -if user_signed_in?
-          -unless current_user.liked? @forum
-            %li= link_to ' ', forum_like_path(@forum), method: :put, class: "fa fa-heart-o"
-          -else
-            %li= link_to ' ', forum_unlike_path(@forum), method: :put, class: "fa fa-heart"
-        %li= @forum.votes_for.size
-        -if user_signed_in?
-          %li= link_to ' ', @forum, class: "fa fa-paper-plane"
-          -if current_user.id == @forum.user.id
-            %li= link_to ' ', edit_forum_path(@forum), class: "fa fa-edit"
-            %li= link_to ' ', @forum, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "fa fa-scissors"
-        -else
-          %li
-            %span.fa.fa-heart-o
+  = render 'box'
+  %br/
+  .row
+    - @forum.comments.each do |c|
+      .medium-10.medium-offset-1.columnn
+        .callout.comment-box
+          %h6
+            = c.comment
+          %p  
+            by 
+            = c.user.firstname
+            %small 
+              = (time_ago_in_words c.created_at) + " ago"
+            - if user_signed_in?
+              - if c.user == current_user
+                - del_path = "/forums/" + @forum.id.to_s + "/comments/" + c.id.to_s
+                &nbsp;&nbsp;
+                = link_to "", del_path, method: :delete, class: "fa fa-scissors "
+    %br/
+  .row  
+    = form_for ([@forum, @forum.comments.new]) do |f|
+      .medium-6.medium-offset-1.columns
+        = f.text_field :comment
+      .medium-4.columns
+        = f.submit 'Comment', class: "button secondary"
+  %br/
+
 .center
   = link_to 'Edit', edit_forum_path(@forum)
   |
   = link_to 'Back', @forums_path
+
+
+

@@ -1,0 +1,24 @@
+.blog-post
+  %h3
+    = @forum.title
+    %small= (time_ago_in_words @forum.created_at) + " ago"
+  %p= @forum.post
+  .callout
+    %ul.menu
+      %li
+        = @forum.user.firstname + " " + @forum.user.lastname + " (" + @forum.category.name + ")"
+      -if user_signed_in?
+        -unless current_user.liked? @forum
+          %li= link_to ' ', forum_like_path(@forum), method: :put, class: "fa fa-heart-o",style: "color:#E57373;"
+        -else
+          %li= link_to ' ', forum_unlike_path(@forum), method: :put, class: "fa fa-heart",style: "color:#E57373;"
+      %li
+        %a=   pluralize @forum.votes_for.size, "Like" 
+      -if user_signed_in?
+        %li= link_to ' ', @forum, class: "fa fa-paper-plane"
+        -if current_user.id == @forum.user.id
+          %li= link_to ' ', edit_forum_path(@forum), class: "fa fa-edit"
+          %li= link_to ' ', @forum, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "fa fa-scissors"
+      -else
+        %li
+          %a.fa.fa-heart-o

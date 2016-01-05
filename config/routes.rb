@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  
   resources :forums do
       put "like", to: "forums#like"
       put "unlike", to: "forums#unlike"
+      put "comment", to: "forums#comment"
+      resources :comments
   end
   devise_for :users, :controllers => { registrations: 'registrations' } 
   # The priority is based upon order of creation: first created -> highest priority.

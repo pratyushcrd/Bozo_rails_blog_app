@@ -1,6 +1,6 @@
 class Forum < ActiveRecord::Base
   acts_as_votable
-  acts_as_commentable
+  has_many :comments, dependent: :destroy
   belongs_to :user
   belongs_to :category
   validates :title, presence: true, null: false

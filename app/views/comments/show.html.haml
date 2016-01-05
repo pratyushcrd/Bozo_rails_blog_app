@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Comment:
+  = @comment.comment
+%p
+  %b User:
+  = @comment.user
+%p
+  %b Forum:
+  = @comment.forum
+
+= link_to 'Edit', edit_comment_path(@comment)
+\|
+= link_to 'Back', comments_path

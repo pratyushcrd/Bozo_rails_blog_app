@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :comments, through: :forum
   acts_as_voter
   has_many :forums
   devise :database_authenticatable, :registerable,

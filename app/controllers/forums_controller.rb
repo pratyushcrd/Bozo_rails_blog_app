@@ -1,6 +1,6 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: [:show, :edit, :update, :destroy]
-  before_action :check_login, only: [:update, :destroy, :new, :edit, :create]
+  before_action :check_login, only: [:update, :destroy, :new, :edit, :create, :like, :unlike, :comment]
 
   respond_to :html
 
@@ -10,7 +10,12 @@ class ForumsController < ApplicationController
   end
 
   def show
-    respond_with(@forum)
+  end
+
+  def comment
+    @forum = Forum.find(params[:forums_id])
+    @comment = Comment.build_from( @article, current_user.id, params[:comment] )
+    redirect_to :back
   end
 
   def like

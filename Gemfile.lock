@@ -27,7 +27,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    acts_as_commentable (4.0.2)
     acts_as_votable (0.10.0)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.10-x86-mingw32)
@@ -143,7 +142,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  acts_as_commentable
   acts_as_votable (~> 0.10.0)
   coffee-rails (~> 4.0.0)
   coffee-script-source (= 1.8.0)
