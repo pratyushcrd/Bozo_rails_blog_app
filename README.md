@@ -29,7 +29,7 @@ And of course Bozo itself is open source with a [public repository][bozo]
 
 ### Installation
 
-You need Gulp installed globally:
+You need Git and Ruby on Rails installed :
 
 ```sh
 git init
