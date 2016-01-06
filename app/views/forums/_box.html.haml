@@ -14,8 +14,8 @@
           %li= link_to ' ', forum_unlike_path(@forum), method: :put, class: "fa fa-heart",style: "color:#E57373;"
       %li
         %a=   pluralize @forum.votes_for.size, "Like" 
+      %li= link_to ' ', @forum, class: "fa fa-paper-plane"
       -if user_signed_in?
-        %li= link_to ' ', @forum, class: "fa fa-paper-plane"
         -if current_user.id == @forum.user.id
           %li= link_to ' ', edit_forum_path(@forum), class: "fa fa-edit"
           %li= link_to ' ', @forum, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "fa fa-scissors"
