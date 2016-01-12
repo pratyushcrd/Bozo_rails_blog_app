@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :profiles
+
   resources :forums do
       put "like", to: "forums#like"
       put "unlike", to: "forums#unlike"

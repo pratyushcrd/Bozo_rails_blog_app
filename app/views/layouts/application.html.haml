@@ -24,6 +24,8 @@
               = link_to "Sign In", new_user_session_path
           -else
             %li
+              = link_to "Profile", profiles_path
+            %li
               =link_to "Sign Out", destroy_user_session_path, method: :delete, cofirm: "sd"
 
     .callout.large.poster

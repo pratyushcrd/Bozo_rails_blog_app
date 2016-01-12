@@ -1,0 +1,26 @@
+.row
+  .medium-6.large-6.column
+    .panel.right
+      .profile_pic{style: "background-image: url(#{@profile.avatar.url(:medium)}); display: block; float: right; margin-right: 20px"}
+  .medium-6.column.verticalLine
+    = form_for @profile, url: profile_path, html: { multipart: true } do |f|
+      - if @profile.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@profile.errors.count, "error")} prohibited this profile from being saved:"
+          %ul
+            - @profile.errors.full_messages.each do |msg|
+              %li= msg
+      .field.medium-5.large-5
+        = f.label :bio
+        = f.text_field :bio
+      .field.medium-5.large-5
+        = f.label :dob
+        = f.date_field :dob
+      .field.medium-5.large-5
+        = f.label :hobbies
+        = f.text_field :hobbies
+      .field.medium-5.large-5
+        = f.label :avatar
+        = f.file_field :avatar
+      .actions
+        = f.submit 'Save'

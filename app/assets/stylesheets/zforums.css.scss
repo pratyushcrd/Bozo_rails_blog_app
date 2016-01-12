@@ -81,6 +81,8 @@ body{
 	border-radius: 25px;
 	background: #f1f1f1;
 	padding: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .comment-box h6{
@@ -89,4 +91,23 @@ body{
 
 .comment-box p{
 	color: #728d4e;
+}
+
+.comment-box a{
+	color: #728d4e;
+}
+
+.comment-box a:hover{
+	background: inherit;
+}
+
+.profile_pic{
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.verticalLine {
+    border-left: 1px solid #ddd;
 }

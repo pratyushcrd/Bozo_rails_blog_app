@@ -1,0 +1,28 @@
+%h1.subheader.text-center= current_user.firstname + " " + current_user.lastname
+
+.row
+  .medium-6.large-6.column
+    .panel.right
+      %a{"data-open" => "myModal", :href => "#"} 
+        .profile_pic{style: "background-image: url(#{@profile.avatar.url(:medium)}); display: block; float: right; margin-right: 20px"}
+  .medium-6.column.verticalLine
+    %br
+      %strong
+        Bio : 
+      = @profile.bio
+    %br
+      %strong
+        DOB : 
+      = @profile.dob
+    %br
+      %strong
+        Hobbies : 
+      = @profile.hobbies
+    -if user_signed_in? and current_user = @profile.user  
+      %br= link_to '', edit_profile_path(@profile), class: "fa fa-edit"
+
+
+.reveal#myModal{"data-reveal" => ""}
+  %img{src: "#{@profile.avatar.url}"}
+
+%br

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105170833) do
+ActiveRecord::Schema.define(version: 20160107134842) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -47,6 +47,21 @@ ActiveRecord::Schema.define(version: 20160105170833) do
 
   add_index "forums", ["category_id"], name: "index_forums_on_category_id", using: :btree
   add_index "forums", ["user_id"], name: "index_forums_on_user_id", using: :btree
+
+  create_table "profiles", force: true do |t|
+    t.string   "bio"
+    t.string   "dob"
+    t.string   "hobbies"
+    t.integer  "user_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

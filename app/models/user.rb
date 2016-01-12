@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :comments, through: :forum
   acts_as_voter
+  has_one :profile
   has_many :forums
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

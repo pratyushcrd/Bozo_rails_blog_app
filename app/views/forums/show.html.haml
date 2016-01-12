@@ -5,13 +5,13 @@
   %br/
   .row
     - @forum.comments.each do |c|
-      .medium-10.medium-offset-1.columnn
+      .medium-12.columnn
         .callout.comment-box
           %h6
             = c.comment
           %p  
             by 
-            = c.user.firstname
+            = link_to c.user.firstname, profile_path(c.forum.user.profile) 
             %small 
               = (time_ago_in_words c.created_at) + " ago"
             - if user_signed_in?

@@ -6,7 +6,7 @@
   .callout
     %ul.menu
       %li
-        = @forum.user.firstname + " " + @forum.user.lastname + " (" + @forum.category.name + ")"
+        =link_to @forum.user.firstname + " " + @forum.user.lastname + " (" + @forum.category.name + ")", profile_path(@forum.user.profile) 
       -if user_signed_in?
         -unless current_user.liked? @forum
           %li= link_to ' ', forum_like_path(@forum), method: :put, class: "fa fa-heart-o",style: "color:#E57373;"
